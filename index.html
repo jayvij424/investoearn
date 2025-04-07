@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WealthGrowth - Professional Mutual Fund Distributor</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2a4365 100%);
+            min-height: 80vh;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #4299e1;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .calculator-tab {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .calculator-tab.active {
+            background-color: #4299e1;
+            color: white;
+        }
+        
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-heading {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-heading:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: #4299e1;
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .contact-form input, .contact-form textarea, .contact-form select {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+        }
+        
+        .custom-range-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+        }
+        
+        .custom-range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4299e1;
+            cursor: pointer;
+        }
+        
+        .custom-range-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4299e1;
+            cursor: pointer;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        @media print {
+            .no-print {
+                display: none;
+            }
+            
+            body, html {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .container {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 no-print">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="text-blue-800 font-bold text-2xl">
+                        <span class="text-blue-600">Wealth</span>Growth
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 font-medium">About Us</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Services</a>
+                    <a href="#testimonials" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
+                    <a href="#tools" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Tools</a>
+                    <a href="#blog" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Insights</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#login" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-all duration-300 mr-2">
+                        Client Login
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden bg-white border-t md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">About Us</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Services</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Testimonials</a>
+                <a href="#tools" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Tools</a>
+                <a href="#blog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Insights</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+                <a href="#login" class="block px-3 py-2 rounded-md text-base font-medium bg-blue-600 text-white hover:bg-blue-700">Client Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section flex items-center justify-center relative">
+        <div class="container mx-auto px-4 py-32 md:py-40">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-10 mb-10 md:mb-0 animate-fadeIn" style="animation-delay: 0.1s;">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+                        Helping You Grow Wealth with the Right Mutual Funds
+                    </h1>
+                    <p class="text-lg md:text-xl text-blue-100 mb-8">
+                        We're your trusted partner for navigating the mutual fund market. With personalized investment strategies and expert guidance, we help you achieve your financial goals.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="cta-button bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg">
+                            Book Free Consultation
+                        </a>
+                        <a href="#tools" class="cta-button bg-white text-blue-700 font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-50">
+                            Try Our Calculators
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 animate-fadeIn" style="animation-delay: 0.3s;">
+                    <img src="https://via.placeholder.com/600x400/e2e8f0/1a365d?text=Financial+Growth" alt="Financial Growth" class="rounded-xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">₹350+ Cr</div>
+                    <div class="text-gray-600">Assets Under Management</div>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">1000+</div>
+                    <div class="text-gray-600">Happy Investors</div>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">15+</div>
+                    <div class="text-gray-600">Years Experience</div>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">99%</div>
+                    <div class="text-gray-600">Client Retention</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading text-3xl md:text-4xl font-bold text-center text-gray-800">
+                About Us
+            </h2>
+            <div class="flex flex-col md:flex-row items-center mt-8">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://via.placeholder.com/600x400/e2e8f0/1a365d?text=Our+Team" alt="Our Team" class="rounded-xl shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Your Trusted Financial Partner</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        WealthGrowth Financial Services was founded in 2008 with a simple mission: to help everyday investors achieve financial freedom through smart mutual fund investments. We believe that quality financial advice shouldn't be reserved for the wealthy.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        With AMFI Registration Number (ARN-12345) and over 15 years of experience in the financial markets, our team of certified financial advisors brings expert knowledge and personalized service to every client relationship.
+                    </p>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm mb-6">
+                        <h4 class="font-semibold text-blue-800 mb-2">Our Mission</h4>
+                        <p class="text-gray-700">To empower our clients with the knowledge and tools needed to build lasting wealth through disciplined mutual fund investing.</p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4 mt-6">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-award text-blue-600"></i>
+                            </div>
+                            <span class="text-gray-700">AMFI Certified</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-shield-alt text-blue-600"></i>
+                            </div>
+                            <span class="text-gray-700">SEBI Compliant</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-user-tie text-blue-600"></i>
+                            </div>
+                            <span class="text-gray-700">Certified Advisors</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Why Choose Us -->
+            <div class="mt-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-12">Why Choose Us</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-blue-500 hover:shadow-xl transition-all duration-300">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-hand-holding-usd text-2xl text-blue-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-center mb-4">Fee Transparency</h4>
+                        <p class="text-gray-600 text-center">
+                            No hidden charges or commissions. We believe in complete transparency in how we are compensated.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-blue-500 hover:shadow-xl transition-all duration-300">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-chart-line text-2xl text-blue-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-center mb-4">Research-Backed Recommendations</h4>
+                        <p class="text-gray-600 text-center">
+                            Our investment recommendations come from thorough research and analysis, not from product promotions.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-blue-500 hover:shadow-xl transition-all duration-300">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-user-friends text-2xl text-blue-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-center mb-4">Personalized Service</h4>
+                        <p class="text-gray-600 text-center">
+                            We don't believe in one-size-fits-all solutions. Your investment strategy is tailored to your unique goals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-blue-50 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading text-3xl md:text-4xl font-bold text-center text-gray-800">
+                Our Services
+            </h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                We offer a comprehensive range of mutual fund services designed to help you at every stage of your investment journey.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-3 bg-blue-600"></div>
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-coins text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Mutual Fund Investment</h3>
+                        <p class="text-gray-600 mb-4">
+                            Access to a wide range of mutual funds across different categories, asset classes, and fund houses. We help you select the most suitable funds based on your risk profile and goals.
+                        </p>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Learn more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-3 bg-blue-600"></div>
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-calendar-alt text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">SIP Planning</h3>
+                        <p class="text-gray-600 mb-4">
+                            Systematic Investment Plans tailored to your financial capacity. We help you determine the right SIP amount, frequency, and funds to create a disciplined investment approach.
+                        </p>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Learn more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-3 bg-blue-600"></div>
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-bullseye text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Goal-Based Planning</h3>
+                        <p class="text-gray-600 mb-4">
+                            Create specific investment strategies for your life goals like retirement, education, home purchase, or wealth creation. We map your goals to the right investment vehicles.
+                        </p>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Learn more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-3 bg-blue-600"></div>
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-hand-holding-usd text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Tax Saving Investments (ELSS)</h3>
+                        <p class="text-gray-600 mb-4">
+                            Invest in Equity Linked Savings Schemes (ELSS) to save taxes under Section 80C while creating wealth through equity investments with just a 3-year lock-in period.
+                        </p>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Learn more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-3 bg-blue-600"></div>
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-sync-alt text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Portfolio Review & Rebalancing</h3>
+                        <p class="text-gray-600 mb-4">
+                            Regular portfolio health check and rebalancing to ensure your investments stay aligned with your goals and risk profile, adapting to changing market conditions.
+                        </p>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Learn more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-3 bg-blue-600"></div>
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-file-alt text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Financial Planning</h3>
+                        <p class="text-gray-600 mb-4">
+                            Comprehensive financial planning service that looks at your overall financial health, including emergency funds, insurance, investments, and estate planning.
+                        </p>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Learn more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading text-3xl md:text-4xl font-bold text-center text-gray-800">
+                Client Testimonials
+            </h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                See what our clients have to say about their experience with our mutual fund services.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-blue-50 rounded-lg shadow-md p-6 relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-quote-left text-white"></i>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <div class="flex justify-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-center mb-6 italic">
+                            "I've been investing with WealthGrowth for over 5 years now. Their personalized approach and regular portfolio reviews have helped me stay on track with my retirement goals. My investments have grown by 64% in this period!"
+                        </p>
+                        <div class="text-center">
+                            <h4 class="font-semibold text-gray-800">Rajesh Sharma</h4>
+                            <p class="text-sm text-gray-600">IT Professional, Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-blue-50 rounded-lg shadow-md p-6 relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-quote-left text-white"></i>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <div class="flex justify-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-center mb-6 italic">
+                            "As someone new to investing, I was worried about making mistakes. The team at WealthGrowth took time to educate me and set up SIPs that fit my budget. Within 3 years, I've saved enough for the down payment on my home!"
+                        </p>
+                        <div class="text-center">
+                            <h4 class="font-semibold text-gray-800">Priya Mehta</h4>
+                            <p class="text-sm text-gray-600">Healthcare Professional, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-blue-50 rounded-lg shadow-md p-6 relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-quote-left text-white"></i>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <div class="flex justify-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-center mb-6 italic">
+                            "What I appreciate most is the transparency. They explained exactly how they earn commissions and gave me multiple fund options, not just the ones with highest payouts. Their tax-saving suggestions have saved me lakhs over the years."
+                        </p>
+                        <div class="text-center">
+                            <h4 class="font-semibold text-gray-800">Arjun Kapoor</h4>
+                            <p class="text-sm text-gray-600">Business Owner, Delhi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="mt-16">
+                <h3 class="text-xl font-semibold text-center text-gray-700 mb-8">Trusted By</h3>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                    <div class="grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="https://via.placeholder.com/150x60/e2e8f0/1a365d?text=AMFI" alt="AMFI" class="h-10">
+                    </div>
+                    <div class="grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="https://via.placeholder.com/150x60/e2e8f0/1a365d?text=BSE" alt="BSE" class="h-10">
+                    </div>
+                    <div class="grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="https://via.placeholder.com/150x60/e2e8f0/1a365d?text=NSE" alt="NSE" class="h-10">
+                    </div>
+                    <div class="grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="https://via.placeholder.com/150x60/e2e8f0/1a365d?text=SEBI" alt="SEBI" class="h-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculators Section -->
+    <section id="tools" class="bg-blue-50 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading text-3xl md:text-4xl font-bold text-center text-gray-800">
+                Mutual Fund Tools & Calculators
+            </h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                Use our interactive calculators to plan your investments and visualize your financial goals.
+            </p>
+            
+            <!-- Calculator Tabs -->
+            <div class="flex flex-wrap justify-center mb-8">
+                <button class="calculator-tab active px-6 py-3 text-lg font-medium rounded-t-lg" data-tab="sip">
+                    SIP Calculator
+                </button>
+                <button class="calculator-tab px-6 py-3 text-lg font-medium rounded-t-lg" data-tab="lumpsum">
+                    Lumpsum Calculator
+                </button>
+                <button class="calculator-tab px-6 py-3 text-lg font-medium rounded-t-lg" data-tab="goal">
+                    Goal Planner
+                </button>
+                <button class="calculator-tab px-6 py-3 text-lg font-medium rounded-t-lg" data-tab="risk">
+                    Risk Profile Quiz
+                </button>
+            </div>
+            
+            <!-- Calculator Content -->
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <!-- SIP Calculator -->
+                <div id="sip-calculator" class="calculator-content">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 md:pr-8">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-6">SIP Investment Calculator</h3>
+                            <p class="text-gray-600 mb-6">
+                                Calculate how your monthly SIP investments can grow over time with the power of compounding.
+                            </p>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="sip-amount">
+                                    Monthly SIP Amount (₹)
+                                </label>
+                                <input type="range" min="500" max="100000" step="500" value="5000" class="custom-range-slider mb-2" id="sip-amount">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">₹500</span>
+                                    <span id="sip-amount-display" class="font-medium">₹5,000</span>
+                                    <span class="text-sm text-gray-600">₹1,00,000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="sip-period">
+                                    Investment Period (Years)
+                                </label>
+                                <input type="range" min="1" max="30" step="1" value="10" class="custom-range-slider mb-2" id="sip-period">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">1 Year</span>
+                                    <span id="sip-period-display" class="font-medium">10 Years</span>
+                                    <span class="text-sm text-gray-600">30 Years</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="sip-return">
+                                    Expected Annual Return (%)
+                                </label>
+                                <input type="range" min="4" max="20" step="0.5" value="12" class="custom-range-slider mb-2" id="sip-return">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">4%</span>
+                                    <span id="sip-return-display" class="font-medium">12%</span>
+                                    <span class="text-sm text-gray-600">20%</span>
+                                </div>
+                            </div>
+                            
+                            <button id="calculate-sip" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                                Calculate
+                            </button>
+                        </div>
+                        
+                        <div class="md:w-1/2 mt-8 md:mt-0">
+                            <div class="bg-blue-50 rounded-lg p-6">
+                                <h4 class="text-xl font-semibold text-center text-gray-800 mb-6">Your SIP Investment Results</h4>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="bg-white rounded-lg p-4 text-center">
+                                        <div class="text-sm text-gray-600 mb-1">Invested Amount</div>
+                                        <div id="sip-invested" class="text-2xl font-bold text-gray-800">₹6,00,000</div>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 text-center">
+                                        <div class="text-sm text-gray-600 mb-1">Estimated Returns</div>
+                                        <div id="sip-returns" class="text-2xl font-bold text-blue-600">₹4,16,286</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-lg p-4 text-center mb-6">
+                                    <div class="text-sm text-gray-600 mb-1">Total Value</div>
+                                    <div id="sip-total" class="text-3xl font-bold text-green-600">₹10,16,286</div>
+                                </div>
+                                
+                                <div class="h-60 bg-gray-100 rounded-lg flex items-center justify-center p-4">
+                                    <div id="sip-chart" class="w-full h-full">
+                                        <!-- Chart will be rendered here -->
+                                        <div class="flex h-full">
+                                            <div class="w-1/2 h-full bg-blue-200 rounded-l-lg relative overflow-hidden">
+                                                <div class="absolute bottom-0 left-0 right-0 bg-blue-600 h-3/5 flex items-center justify-center">
+                                                    <span class="text-white font-medium">Invested</span>
+                                                </div>
+                                            </div>
+                                            <div class="w-1/2 h-full bg-green-200 rounded-r-lg relative overflow-hidden">
+                                                <div class="absolute bottom-0 left-0 right-0 bg-green-600 h-full flex items-center justify-center">
+                                                    <span class="text-white font-medium">Total</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lumpsum Calculator -->
+                <div id="lumpsum-calculator" class="calculator-content" style="display: none;">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 md:pr-8">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Lumpsum Investment Calculator</h3>
+                            <p class="text-gray-600 mb-6">
+                                Calculate how a one-time investment can grow over time with compound interest.
+                            </p>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="lumpsum-amount">
+                                    Investment Amount (₹)
+                                </label>
+                                <input type="range" min="10000" max="5000000" step="10000" value="100000" class="custom-range-slider mb-2" id="lumpsum-amount">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">₹10,000</span>
+                                    <span id="lumpsum-amount-display" class="font-medium">₹1,00,000</span>
+                                    <span class="text-sm text-gray-600">₹50,00,000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="lumpsum-period">
+                                    Investment Period (Years)
+                                </label>
+                                <input type="range" min="1" max="30" step="1" value="10" class="custom-range-slider mb-2" id="lumpsum-period">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">1 Year</span>
+                                    <span id="lumpsum-period-display" class="font-medium">10 Years</span>
+                                    <span class="text-sm text-gray-600">30 Years</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="lumpsum-return">
+                                    Expected Annual Return (%)
+                                </label>
+                                <input type="range" min="4" max="20" step="0.5" value="12" class="custom-range-slider mb-2" id="lumpsum-return">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">4%</span>
+                                    <span id="lumpsum-return-display" class="font-medium">12%</span>
+                                    <span class="text-sm text-gray-600">20%</span>
+                                </div>
+                            </div>
+                            
+                            <button id="calculate-lumpsum" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                                Calculate
+                            </button>
+                        </div>
+                        
+                        <div class="md:w-1/2 mt-8 md:mt-0">
+                            <div class="bg-blue-50 rounded-lg p-6">
+                                <h4 class="text-xl font-semibold text-center text-gray-800 mb-6">Your Lumpsum Investment Results</h4>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="bg-white rounded-lg p-4 text-center">
+                                        <div class="text-sm text-gray-600 mb-1">Invested Amount</div>
+                                        <div id="lumpsum-invested" class="text-2xl font-bold text-gray-800">₹1,00,000</div>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 text-center">
+                                        <div class="text-sm text-gray-600 mb-1">Estimated Returns</div>
+                                        <div id="lumpsum-returns" class="text-2xl font-bold text-blue-600">₹2,10,584</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-lg p-4 text-center mb-6">
+                                    <div class="text-sm text-gray-600 mb-1">Total Value</div>
+                                    <div id="lumpsum-total" class="text-3xl font-bold text-green-600">₹3,10,584</div>
+                                </div>
+                                
+                                <div class="h-60 bg-gray-100 rounded-lg flex items-center justify-center p-4">
+                                    <div id="lumpsum-chart" class="w-full h-full">
+                                        <!-- Chart will be rendered here -->
+                                        <div class="flex h-full">
+                                            <div class="w-1/3 h-full bg-blue-200 rounded-l-lg relative overflow-hidden">
+                                                <div class="absolute bottom-0 left-0 right-0 bg-blue-600 h-1/3 flex items-center justify-center">
+                                                    <span class="text-white font-medium">Invested</span>
+                                                </div>
+                                            </div>
+                                            <div class="w-2/3 h-full bg-green-200 rounded-r-lg relative overflow-hidden">
+                                                <div class="absolute bottom-0 left-0 right-0 bg-green-600 h-full flex items-center justify-center">
+                                                    <span class="text-white font-medium">Total</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Goal Planner -->
+                <div id="goal-calculator" class="calculator-content" style="display: none;">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 md:pr-8">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Goal Planner</h3>
+                            <p class="text-gray-600 mb-6">
+                                Plan your investments to achieve specific financial goals like education, retirement, or buying a home.
+                            </p>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="goal-type">
+                                    Goal Type
+                                </label>
+                                <select id="goal-type" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="retirement">Retirement</option>
+                                    <option value="education">Child's Education</option>
+                                    <option value="home">Home Purchase</option>
+                                    <option value="car">Car Purchase</option>
+                                    <option value="vacation">Dream Vacation</option>
+                                    <option value="other">Other Goal</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="goal-amount">
+                                    Target Amount (₹)
+                                </label>
+                                <input type="range" min="100000" max="10000000" step="100000" value="2000000" class="custom-range-slider mb-2" id="goal-amount">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">₹1 Lakh</span>
+                                    <span id="goal-amount-display" class="font-medium">₹20 Lakhs</span>
+                                    <span class="text-sm text-gray-600">₹1 Crore</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="goal-period">
+                                    Time to Goal (Years)
+                                </label>
+                                <input type="range" min="1" max="30" step="1" value="15" class="custom-range-slider mb-2" id="goal-period">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">1 Year</span>
+                                    <span id="goal-period-display" class="font-medium">15 Years</span>
+                                    <span class="text-sm text-gray-600">30 Years</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="goal-return">
+                                    Expected Annual Return (%)
+                                </label>
+                                <input type="range" min="4" max="20" step="0.5" value="12" class="custom-range-slider mb-2" id="goal-return">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">4%</span>
+                                    <span id="goal-return-display" class="font-medium">12%</span>
+                                    <span class="text-sm text-gray-600">20%</span>
+                                </div>
+                            </div>
+                            
+                            <button id="calculate-goal" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                                Calculate
+                            </button>
+                        </div>
+                        
+                        <div class="md:w-1/2 mt-8 md:mt-0">
+                            <div class="bg-blue-50 rounded-lg p-6">
+                                <h4 class="text-xl font-semibold text-center text-gray-800 mb-6">Your Goal Plan Results</h4>
+                                
+                                <div class="bg-white rounded-lg p-4 text-center mb-6">
+                                    <div class="text-sm text-gray-600 mb-1">Required Monthly SIP</div>
+                                    <div id="goal-monthly-sip" class="text-3xl font-bold text-blue-600">₹5,246</div>
+                                    <p class="text-sm text-gray-600 mt-2">
+                                        To reach your goal of <span id="goal-target-display">₹20 Lakhs</span> in <span id="goal-years-display">15 years</span>
+                                    </p>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="bg-white rounded-lg p-4 text-center">
+                                        <div class="text-sm text-gray-600 mb-1">Total Investment</div>
+                                        <div id="goal-total-investment" class="text-xl font-bold text-gray-800">₹9,44,280</div>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 text-center">
+                                        <div class="text-sm text-gray-600 mb-1">Wealth Gain</div>
+                                        <div id="goal-wealth-gain" class="text-xl font-bold text-green-600">₹10,55,720</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-lg p-4">
+                                    <h5 class="font-medium text-gray-800 mb-3">Recommended Fund Allocation</h5>
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-700">Equity Funds</span>
+                                            <span id="goal-equity-percent" class="font-medium">70%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-blue-600 h-2 rounded-full" style="width: 70%"></div>
+                                        </div>
+                                        
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-700">Debt Funds</span>
+                                            <span id="goal-debt-percent" class="font-medium">20%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-blue-600 h-2 rounded-full" style="width: 20%"></div>
+                                        </div>
+                                        
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-700">Gold/Other</span>
+                                            <span id="goal-other-percent" class="font-medium">10%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-blue-600 h-2 rounded-full" style="width: 10%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Risk Profile Quiz -->
+                <div id="risk-calculator" class="calculator-content" style="display: none;">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Risk Profile Assessment</h3>
+                    <p class="text-gray-600 mb-8">
+                        Answer these questions to determine your investment risk tolerance and get fund recommendations suited to your profile.
+                    </p>
+                    
+                    <div id="risk-questions">
+                        <div class="risk-question mb-8 bg-blue-50 p-6 rounded-lg">
+                            <h4 class="text-lg font-medium text-gray-800 mb-4">1. What is your primary investment goal?</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="radio" id="q1-a" name="q1" value="1" class="mr-3">
+                                    <label for="q1-a" class="text-gray-700">Preserving capital and generating a regular income</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q1-b" name="q1" value="2" class="mr-3">
+                                    <label for="q1-b" class="text-gray-700">Balanced approach with some growth and some income</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q1-c" name="q1" value="3" class="mr-3">
+                                    <label for="q1-c" class="text-gray-700">Growing my assets over the long term</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q1-d" name="q1" value="4" class="mr-3">
+                                    <label for="q1-d" class="text-gray-700">Aggressive growth, willing to take substantial risks</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="risk-question mb-8 bg-blue-50 p-6 rounded-lg">
+                            <h4 class="text-lg font-medium text-gray-800 mb-4">2. How would you react if your investments dropped 20% in a year?</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="radio" id="q2-a" name="q2" value="1" class="mr-3">
+                                    <label for="q2-a" class="text-gray-700">Sell everything and move to safer investments</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q2-b" name="q2" value="2" class="mr-3">
+                                    <label for="q2-b" class="text-gray-700">Sell some of my investments</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q2-c" name="q2" value="3" class="mr-3">
+                                    <label for="q2-c" class="text-gray-700">Hold onto all my investments and wait for recovery</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q2-d" name="q2" value="4" class="mr-3">
+                                    <label for="q2-d" class="text-gray-700">Buy more at lower prices</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="risk-question mb-8 bg-blue-50 p-6 rounded-lg">
+                            <h4 class="text-lg font-medium text-gray-800 mb-4">3. How long can you leave your money invested without needing to access it?</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="radio" id="q3-a" name="q3" value="1" class="mr-3">
+                                    <label for="q3-a" class="text-gray-700">Less than 3 years</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q3-b" name="q3" value="2" class="mr-3">
+                                    <label for="q3-b" class="text-gray-700">3-5 years</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q3-c" name="q3" value="3" class="mr-3">
+                                    <label for="q3-c" class="text-gray-700">5-10 years</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q3-d" name="q3" value="4" class="mr-3">
+                                    <label for="q3-d" class="text-gray-700">More than 10 years</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="risk-question mb-8 bg-blue-50 p-6 rounded-lg">
+                            <h4 class="text-lg font-medium text-gray-800 mb-4">4. How would you describe your knowledge of investments?</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="radio" id="q4-a" name="q4" value="1" class="mr-3">
+                                    <label for="q4-a" class="text-gray-700">Very limited - I know little about investments</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q4-b" name="q4" value="2" class="mr-3">
+                                    <label for="q4-b" class="text-gray-700">Basic - I understand how investments work broadly</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q4-c" name="q4" value="3" class="mr-3">
+                                    <label for="q4-c" class="text-gray-700">Good - I actively manage my own investments</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q4-d" name="q4" value="4" class="mr-3">
+                                    <label for="q4-d" class="text-gray-700">Advanced - I have extensive investment knowledge</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="risk-question mb-8 bg-blue-50 p-6 rounded-lg">
+                            <h4 class="text-lg font-medium text-gray-800 mb-4">5. Which statement best describes your investment preference?</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="radio" id="q5-a" name="q5" value="1" class="mr-3">
+                                    <label for="q5-a" class="text-gray-700">I prefer guaranteed returns, even if they're lower</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q5-b" name="q5" value="2" class="mr-3">
+                                    <label for="q5-b" class="text-gray-700">I prefer mostly stable investments with some growth potential</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q5-c" name="q5" value="3" class="mr-3">
+                                    <label for="q5-c" class="text-gray-700">I'm willing to accept moderate fluctuations for better returns</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="q5-d" name="q5" value="4" class="mr-3">
+                                    <label for="q5-d" class="text-gray-700">I'm comfortable with significant volatility for potentially higher returns</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="calculate-risk" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                            Calculate Risk Profile
+                        </button>
+                    </div>
+                    
+                    <div id="risk-result" style="display: none;" class="mt-8 bg-blue-50 p-6 rounded-lg">
+                        <h4 class="text-2xl font-semibold text-center text-gray-800 mb-6">Your Risk Profile</h4>
+                        
+                        <div class="bg-white rounded-lg p-6 text-center mb-6">
+                            <div id="risk-profile-name" class="text-2xl font-bold text-blue-600 mb-2">Balanced Investor</div>
+                            <div id="risk-profile-score" class="text-lg text-gray-600">Score: 15/20</div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-6 mb-6">
+                            <h5 class="font-semibold text-gray-800 mb-3">Profile Description</h5>
+                            <p id="risk-profile-description" class="text-gray-700">
+                                You have a moderate approach to risk, seeking a balance between growth and stability. You understand market fluctuations are normal and are prepared to weather some volatility for potentially better long-term returns.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-6">
+                            <h5 class="font-semibold text-gray-800 mb-3">Recommended Asset Allocation</h5>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">Equity Funds</span>
+                                    <span id="risk-equity-percent" class="font-medium">60%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div id="risk-equity-bar" class="bg-blue-600 h-2 rounded-full" style="width: 60%"></div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">Debt Funds</span>
+                                    <span id="risk-debt-percent" class="font-medium">30%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div id="risk-debt-bar" class="bg-blue-600 h-2 rounded-full" style="width: 30%"></div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700">Gold/Liquid Funds</span>
+                                    <span id="risk-other-percent" class="font-medium">10%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div id="risk-other-bar" class="bg-blue-600 h-2 rounded-full" style="width: 10%"></div>
+                                </div>
+                            </div>
+                            
+                            <a href="#contact" class="block w-full bg-blue-600 text-white text-center font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                                Get Personalized Fund Recommendations
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading text-3xl md:text-4xl font-bold text-center text-gray-800">
+                Investment Insights
+            </h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                Stay informed with our latest articles on mutual funds, investing strategies, and financial planning.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/600x400/e2e8f0/1a365d?text=SIP+vs+FD" alt="SIP vs FD" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-600 mb-3">
+                            <i class="fas fa-calendar-alt mr-2"></i> April 2, 2023
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                            Why SIP is Better Than Fixed Deposits
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Explore how Systematic Investment Plans can potentially generate higher returns than traditional fixed deposits while offering tax advantages.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Read more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/600x400/e2e8f0/1a365d?text=Mutual+Fund+Myths" alt="Mutual Fund Myths" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-600 mb-3">
+                            <i class="fas fa-calendar-alt mr-2"></i> March 18, 2023
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                            Top 5 Mutual Fund Myths Debunked
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            We tackle common misconceptions about mutual funds that might be keeping you from making smart investment decisions.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Read more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/600x400/e2e8f0/1a365d?text=ELSS+vs+PPF" alt="ELSS vs PPF" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-600 mb-3">
+                            <i class="fas fa-calendar-alt mr-2"></i> February 25, 2023
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                            ELSS vs PPF: Which is Better for Tax Saving?
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            A detailed comparison of two popular tax-saving instruments to help you make an informed choice this tax season.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Read more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 4 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/600x400/e2e8f0/1a365d?text=Market+Volatility" alt="Market Volatility" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-600 mb-3">
+                            <i class="fas fa-calendar-alt mr-2"></i> February 10, 2023
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                            How to Invest During Market Volatility
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Strategies to keep your investment journey on track during periods of market uncertainty and fluctuations.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Read more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 5 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/600x400/e2e8f0/1a365d?text=Retirement+Planning" alt="Retirement Planning" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-600 mb-3">
+                            <i class="fas fa-calendar-alt mr-2"></i> January 28, 2023
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                            Start Retirement Planning in Your 30s
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Why starting your retirement planning early can make a huge difference, and practical steps to get started right now.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Read more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 6 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://via.placeholder.com/600x400/e2e8f0/1a365d?text=First+Time+Investor" alt="First Time Investor" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-600 mb-3">
+                            <i class="fas fa-calendar-alt mr-2"></i> January 12, 2023
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                            Beginner's Guide to Mutual Fund Investing
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Everything you need to know to get started with mutual fund investing, explained in simple, jargon-free language.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            Read more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block bg-blue-100 text-blue-700 font-medium py-3 px-6 rounded-lg hover:bg-blue-200 transition-colors">
+                    View All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Login Section -->
+    <section id="login" class="bg-blue-600 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 bg-blue-700 text-white p-8 md:p-12">
+                        <h2 class="text-3xl font-bold mb-6">Client Access</h2>
+                        <p class="mb-6">
+                            Access your mutual fund portfolio, view transaction history, and monitor your investments in one secure place.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="bg-blue-600 rounded-full p-2 mr-4">
+                                    <i class="fas fa-chart-line text-white"></i>
+                                </div>
+                                <span>Track portfolio performance</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-blue-600 rounded-full p-2 mr-4">
+                                    <i class="fas fa-history text-white"></i>
+                                </div>
+                                <span>View transaction history</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-blue-600 rounded-full p-2 mr-4">
+                                    <i class="fas fa-file-download text-white"></i>
+                                </div>
+                                <span>Download statements</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-blue-600 rounded-full p-2 mr-4">
+                                    <i class="fas fa-money-bill-wave text-white"></i>
+                                </div>
+                                <span>Make additional investments</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Login to Dashboard</h3>
+                        <form>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="email">
+                                    Email Address
+                                </label>
+                                <input type="email" id="email" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your@email.com">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="password">
+                                    Password
+                                </label>
+                                <input type="password" id="password" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="••••••••">
+                                <div class="mt-2 text-right">
+                                    <a href="#" class="text-sm text-blue-600 hover:text-blue-800">Forgot Password?</a>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                                Login
+                            </button>
+                            <div class="mt-6 flex items-center justify-center gap-4">
+                                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">
+                                    <i class="fab fa-google mr-2"></i> Login with Google
+                                </a>
+                                <span class="text-gray-400">|</span>
+                                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">
+                                    First Time User?
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-4xl mx-auto text-center text-white">
+                <h3 class="text-2xl font-semibold mb-8">Access Your Account Through Our Partners</h3>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#" class="bg-white text-blue-800 py-3 px-6 rounded-lg shadow-md hover:bg-blue-50 transition-all font-medium flex items-center">
+                        <img src="https://via.placeholder.com/40x40/ffffff/1a365d?text=MF" alt="MF Central" class="mr-2 w-6 h-6">
+                        MF Central
+                    </a>
+                    <a href="#" class="bg-white text-blue-800 py-3 px-6 rounded-lg shadow-md hover:bg-blue-50 transition-all font-medium flex items-center">
+                        <img src="https://via.placeholder.com/40x40/ffffff/1a365d?text=NJ" alt="NJ Wealth" class="mr-2 w-6 h-6">
+                        NJ Wealth
+                    </a>
+                    <a href="#" class="bg-white text-blue-800 py-3 px-6 rounded-lg shadow-md hover:bg-blue-50 transition-all font-medium flex items-center">
+                        <img src="https://via.placeholder.com/40x40/ffffff/1a365d?text=Z" alt="Zerodha Coin" class="mr-2 w-6 h-6">
+                        Zerodha Coin
+                    </a>
+                    <a href="#" class="bg-white text-blue-800 py-3 px-6 rounded-lg shadow-md hover:bg-blue-50 transition-all font-medium flex items-center">
+                        <img src="https://via.placeholder.com/40x40/ffffff/1a365d?text=ET" alt="ET Money" class="mr-2 w-6 h-6">
+                        ET Money
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading text-3xl md:text-4xl font-bold text-center text-gray-800">
+                Contact Us
+            </h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                Have questions or ready to start your investment journey? Get in touch with us for a free consultation.
+            </p>
+            
+            <div class="flex flex-col md:flex-row max-w-6xl mx-auto">
+                <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0">
+                    <div class="bg-blue-50 p-8 rounded-lg shadow-sm h-full">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Get In Touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Office Address</h4>
+                                    <p class="text-gray-600 mt-1">
+                                        205, Business Plaza<br>
+                                        Sector 17, Near Metro Station<br>
+                                        Mumbai, Maharashtra 400001
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                    <i class="fas fa-phone-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Phone</h4>
+                                    <p class="text-gray-600 mt-1">
+                                        +91 9876543210<br>
+                                        +91 22 12345678
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600 mt-1">
+                                        info@wealthgrowth.com<br>
+                                        support@wealthgrowth.com
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                    <i class="fas fa-clock text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Working Hours</h4>
+                                    <p class="text-gray-600 mt-1">
+                                        Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                        Saturday: 10:00 AM - 2:00 PM<br>
+                                        Sunday: Closed
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-800 mb-4">Connect With Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition-colors">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition-colors">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition-colors">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Request a Call Back</h3>
+                        <form class="contact-form">
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="name">
+                                    Full Name *
+                                </label>
+                                <input type="text" id="name" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your name">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="contact-email">
+                                    Email Address *
+                                </label>
+                                <input type="email" id="contact-email" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your@email.com">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="phone">
+                                    Phone Number *
+                                </label>
+                                <input type="tel" id="phone" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="+91 9876543210">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="investment-goal">
+                                    Investment Goal
+                                </label>
+                                <select id="investment-goal" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="" selected disabled>Select your goal</option>
+                                    <option value="retirement">Retirement Planning</option>
+                                    <option value="education">Child's Education</option>
+                                    <option value="wealth">Wealth Creation</option>
+                                    <option value="tax">Tax Saving</option>
+                                    <option value="home">Home Purchase</option>
+                                    <option value="other">Other Goal</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="message">
+                                    Message
+                                </label>
+                                <textarea id="message" rows="4" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Any specific questions or requirements?"></textarea>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="mr-2">
+                                    <span class="text-gray-700 text-sm">I agree to the <a href="#" class="text-blue-600 hover:underline">privacy policy</a> and consent to being contacted.</span>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                                Send Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-blue-50 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading text-3xl md:text-4xl font-bold text-center text-gray-800">
+                Frequently Asked Questions
+            </h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                Find answers to common questions about mutual fund investments and our services.
+            </p>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-6 focus:outline-none">
+                            <span class="text-lg font-medium text-gray-800">What is the minimum amount I need to start investing?</span>
+                            <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-6" style="display: none;">
+                            <p class="text-gray-600">
+                                You can start investing in mutual funds with as little as ₹500 per month through SIPs (Systematic Investment Plans). For lumpsum investments, the minimum amount varies by fund but typically starts from ₹1,000 to ₹5,000. We believe in making investing accessible to everyone, regardless of budget.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-6 focus:outline-none">
+                            <span class="text-lg font-medium text-gray-800">How do I earn returns from mutual funds?</span>
+                            <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-6" style="display: none;">
+                            <p class="text-gray-600">
+                                Mutual funds generate returns in two ways: through capital appreciation (when the value of the securities in the fund increases) and through dividends or interest earned on those securities. These returns can either be reinvested (growth option) or distributed to investors (dividend option). Over the long term, equity mutual funds have historically outperformed traditional instruments like fixed deposits, making them an attractive option for wealth creation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-6 focus:outline-none">
+                            <span class="text-lg font-medium text-gray-800">Are mutual fund investments safe?</span>
+                            <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-6" style="display: none;">
+                            <p class="text-gray-600">
+                                All investments carry some level of risk. Mutual funds are relatively safer than direct stock investments as they offer diversification and professional management. However, they are subject to market risks. The level of risk varies by fund type - equity funds have higher risk but potentially higher returns, while debt funds are generally less volatile. We help you select funds based on your risk tolerance, goals, and investment horizon to create a balanced portfolio.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-6 focus:outline-none">
+                            <span class="text-lg font-medium text-gray-800">What are the tax implications of mutual fund investments?</span>
+                            <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-6" style="display: none;">
+                            <p class="text-gray-600">
+                                The tax treatment depends on the type of fund and holding period:
+                            </p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-600">
+                                <li>Equity Funds: Short-term capital gains (held < 1 year) are taxed at 15%, while long-term gains (> 1 year) above ₹1 lakh per year are taxed at 10% without indexation.</li>
+                                <li>Debt Funds: Short-term gains (< 3 years) are added to your income and taxed as per your slab, while long-term gains are taxed at 20% with indexation benefits.</li>
+                                <li>ELSS Funds: These equity funds offer tax deduction under Section 80C up to ₹1.5 lakhs with a lock-in period of 3 years.</li>
+                            </ul>
+                            <p class="text-gray-600 mt-2">
+                                We can help you structure your investments in a tax-efficient manner.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-6 focus:outline-none">
+                            <span class="text-lg font-medium text-gray-800">How do you charge for your services?</span>
+                            <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-6" style="display: none;">
+                            <p class="text-gray-600">
+                                We operate on a commission-based model, where we receive a portion of the expense ratio from the fund houses for the investments made through us. This means there are no direct charges to you as an investor. We are committed to complete transparency and will always disclose the commission structures for any fund we recommend. Our focus is on providing unbiased advice that aligns with your best interests, not on pushing products with the highest commissions.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-6 focus:outline-none">
+                            <span class="text-lg font-medium text-gray-800">Can I withdraw my mutual fund investments anytime?</span>
+                            <i class="fas fa-chevron-down text-blue-600 transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-6" style="display: none;">
+                            <p class="text-gray-600">
+                                Yes, most mutual funds are highly liquid and can be redeemed at any time (except for certain funds with lock-in periods like ELSS, which has a 3-year lock-in). The redemption process typically takes 2-3 business days for the money to reach your bank account. However, we generally recommend sticking to your investment plan for the intended duration to achieve your financial goals, unless there's an emergency need for funds.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp no-print">
+        <a href="https://wa.me/919876543210" class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center transition-colors">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/4 mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-6">WealthGrowth</h3>
+                    <p class="text-blue-100 mb-6 pr-6">
+                        Your trusted partner for navigating the mutual fund market with expert guidance and personalized strategies.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/4 mb-8 md:mb-0">
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-blue-200 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-blue-200 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-blue-200 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#tools" class="text-blue-200 hover:text-white transition-colors">Calculators</a></li>
+                        <li><a href="#blog" class="text-blue-200 hover:text-white transition-colors">Investment Insights</a></li>
+                        <li><a href="#login" class="text-blue-200 hover:text-white transition-colors">Client Login</a></li>
+                        <li><a href="#contact" class="text-blue-200 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="w-full md:w-1/4 mb-8 md:mb-0">
+                    <h3 class="text-lg font-semibold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-blue-200 hover:text-white transition-colors">Mutual Fund Investment</a></li>
+                        <li><a href="#services" class="text-blue-200 hover:text-white transition-colors">SIP Planning</a></li>
+                        <li><a href="#services" class="text-blue-200 hover:text-white transition-colors">Goal-Based Planning</a></li>
+                        <li><a href="#services" class="text-blue-200 hover:text-white transition-colors">Tax Saving Investments</a></li>
+                        <li><a href="#services" class="text-blue-200 hover:text-white transition-colors">Portfolio Review</a></li>
+                        <li><a href="#services" class="text-blue-200 hover:text-white transition-colors">Financial Planning</a></li>
+                    </ul>
+                </div>
+                
+                <div class="w-full md:w-1/4">
+                    <h3 class="text-lg font-semibold mb-6">Newsletter</h3>
+                    <p class="text-blue-100 mb-4">
+                        Subscribe to our newsletter for the latest updates, market insights, and investment tips.
+                    </p>
+                    <form>
+                        <div class="flex mb-4">
+                            <input type="email" placeholder="Your email address" class="bg-blue-800 text-white px-4 py-2 rounded-l-md focus:outline-none w-full" />
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-r-md transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="flex items-center text-blue-200 text-sm">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        We respect your privacy.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-blue-200 text-sm mb-4 md:mb-0">
+                        © 2023 WealthGrowth Financial Services. All rights reserved. AMFI Reg. No: ARN-12345
+                    </div>
+                    <div class="flex space-x-4 text-sm text-blue-200">
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                        <span>|</span>
+                        <a href="#" class="hover:text-white transition-colors">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Navigation Scroll Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2');
+            }
+        });
+        
+        // Smooth Scrolling for Internal Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu when a link is clicked
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Calculator Tabs
+        const calculatorTabs = document.querySelectorAll('.calculator-tab');
+        const calculatorContents = document.querySelectorAll('.calculator-content');
+        
+        calculatorTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                calculatorTabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Hide all calculator contents
+                calculatorContents.forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                // Show content for active tab
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(`${tabId}-calculator`).style.display = 'block';
+            });
+        });
+        
+        // SIP Calculator Logic
+        const sipAmountSlider = document.getElementById('sip-amount');
+        const sipAmountDisplay = document.getElementById('sip-amount-display');
+        const sipPeriodSlider = document.getElementById('sip-period');
+        const sipPeriodDisplay = document.getElementById('sip-period-display');
+        const sipReturnSlider = document.getElementById('sip-return');
+        const sipReturnDisplay = document.getElementById('sip-return-display');
+        const sipInvested = document.getElementById('sip-invested');
+        const sipReturns = document.getElementById('sip-returns');
+        const sipTotal = document.getElementById('sip-total');
+        
+        // Format currency function
+        function formatCurrency(amount) {
+            if (amount >= 10000000) {
+                return '₹' + (amount / 10000000).toFixed(2) + ' Cr';
+            } else if (amount >= 100000) {
+                return '₹' + (amount / 100000).toFixed(2) + ' Lakhs';
+            } else {
+                return '₹' + amount.toLocaleString('en-IN');
+            }
+        }
+        
+        // Update slider display values
+        sipAmountSlider.addEventListener('input', function() {
+            sipAmountDisplay.textContent = '₹' + parseInt(this.value).toLocaleString('en-IN');
+        });
+        
+        sipPeriodSlider.addEventListener('input', function() {
+            sipPeriodDisplay.textContent = this.value + ' Years';
+        });
+        
+        sipReturnSlider.addEventListener('input', function() {
+            sipReturnDisplay.textContent = this.value + '%';
+        });
+        
+        // Calculate SIP returns
+        document.getElementById('calculate-sip').addEventListener('click', function() {
+            const p = parseFloat(sipAmountSlider.value); // Monthly investment
+            const r = parseFloat(sipReturnSlider.value) / 100 / 12; // Monthly interest rate
+            const n = parseFloat(sipPeriodSlider.value) * 12; // Total months
+            
+            // Formula: FV = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r)
+            const futureValue = p * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+            const investedAmount = p * n;
+            const estimatedReturns = futureValue - investedAmount;
+            
+            sipInvested.textContent = formatCurrency(investedAmount);
+            sipReturns.textContent = formatCurrency(Math.round(estimatedReturns));
+            sipTotal.textContent = formatCurrency(Math.round(futureValue));
+            
+            // Update chart (simplified version)
+            const investedPercentage = (investedAmount / futureValue) * 100;
+            const returnsPercentage = 100 - investedPercentage;
+            
+            document.querySelector('#sip-chart .bg-blue-600').style.height = `${investedPercentage}%`;
+            document.querySelector('#sip-chart .bg-green-600').style.height = `${100}%`;
+        });
+        
+        // Lumpsum Calculator Logic
+        const lumpsumAmountSlider = document.getElementById('lumpsum-amount');
+        const lumpsumAmountDisplay = document.getElementById('lumpsum-amount-display');
+        const lumpsumPeriodSlider = document.getElementById('lumpsum-period');
+        const lumpsumPeriodDisplay = document.getElementById('lumpsum-period-display');
+        const lumpsumReturnSlider = document.getElementById('lumpsum-return');
+        const lumpsumReturnDisplay = document.getElementById('lumpsum-return-display');
+        const lumpsumInvested = document.getElementById('lumpsum-invested');
+        const lumpsumReturns = document.getElementById('lumpsum-returns');
+        const lumpsumTotal = document.getElementById('lumpsum-total');
+        
+        // Update slider display values
+        lumpsumAmountSlider.addEventListener('input', function() {
+            lumpsumAmountDisplay.textContent = '₹' + parseInt(this.value).toLocaleString('en-IN');
+        });
+        
+        lumpsumPeriodSlider.addEventListener('input', function() {
+            lumpsumPeriodDisplay.textContent = this.value + ' Years';
+        });
+        
+        lumpsumReturnSlider.addEventListener('input', function() {
+            lumpsumReturnDisplay.textContent = this.value + '%';
+        });
+        
+        // Calculate Lumpsum returns
+        document.getElementById('calculate-lumpsum').addEventListener('click', function() {
+            const p = parseFloat(lumpsumAmountSlider.value); // Initial investment
+            const r = parseFloat(lumpsumReturnSlider.value) / 100; // Annual interest rate
+            const n = parseFloat(lumpsumPeriodSlider.value); // Years
+            
+            // Formula: FV = P * Math.pow(1 + r, n)
+            const futureValue = p * Math.pow(1 + r, n);
+            const estimatedReturns = futureValue - p;
+            
+            lumpsumInvested.textContent = formatCurrency(p);
+            lumpsumReturns.textContent = formatCurrency(Math.round(estimatedReturns));
+            lumpsumTotal.textContent = formatCurrency(Math.round(futureValue));
+            
+            // Update chart (simplified version)
+            const investedPercentage = (p / futureValue) * 100;
+            const returnsPercentage = 100 - investedPercentage;
+            
+            document.querySelector('#lumpsum-chart .bg-blue-600').style.height = `${investedPercentage}%`;
+            document.querySelector('#lumpsum-chart .bg-green-600').style.height = `${100}%`;
+        });
+        
+        // Goal Calculator Logic
+        const goalAmountSlider = document.getElementById('goal-amount');
+        const goalAmountDisplay = document.getElementById('goal-amount-display');
+        const goalPeriodSlider = document.getElementById('goal-period');
+        const goalPeriodDisplay = document.getElementById('goal-period-display');
+        const goalReturnSlider = document.getElementById('goal-return');
+        const goalReturnDisplay = document.getElementById('goal-return-display');
+        const goalMonthlySip = document.getElementById('goal-monthly-sip');
+        const goalTotalInvestment = document.getElementById('goal-total-investment');
+        const goalWealthGain = document.getElementById('goal-wealth-gain');
+        const goalTargetDisplay = document.getElementById('goal-target-display');
+        const goalYearsDisplay = document.getElementById('goal-years-display');
+        
+        // Format lakhs/crores
+        function formatIndianCurrency(amount) {
+            if (amount >= 10000000) {
+                return '₹' + (amount / 10000000).toFixed(2) + ' Cr';
+            } else if (amount >= 100000) {
+                return '₹' + (amount / 100000).toFixed(2) + ' Lakhs';
+            } else {
+                return '₹' + amount.toLocaleString('en-IN');
+            }
+        }
+        
+        // Update slider display values
+        goalAmountSlider.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            if (value >= 10000000) {
+                goalAmountDisplay.textContent = '₹' + (value / 10000000).toFixed(2) + ' Crore';
+            } else {
+                goalAmountDisplay.textContent = '₹' + (value / 100000).toFixed(1) + ' Lakhs';
+            }
+        });
+        
+        goalPeriodSlider.addEventListener('input', function() {
+            goalPeriodDisplay.textContent = this.value + ' Years';
+        });
+        
+        goalReturnSlider.addEventListener('input', function() {
+            goalReturnDisplay.textContent = this.value + '%';
+        });
+        
+        // Calculate Goal-based SIP
+        document.getElementById('calculate-goal').addEventListener('click', function() {
+            const targetAmount = parseFloat(goalAmountSlider.value);
+            const years = parseFloat(goalPeriodSlider.value);
+            const annualReturn = parseFloat(goalReturnSlider.value) / 100;
+            const monthlyReturn = annualReturn / 12;
+            const months = years * 12;
+            
+            // Formula to calculate required monthly SIP: P = A / {[(1+r)^n - 1] / r} * (1+r)
+            // Where P is monthly SIP, A is target amount, r is monthly return rate, n is number of months
+            const monthlySIP = targetAmount / (((Math.pow(1 + monthlyReturn, months) - 1) / monthlyReturn) * (1 + monthlyReturn));
+            
+            const totalInvestment = monthlySIP * months;
+            const wealthGain = targetAmount - totalInvestment;
+            
+            goalMonthlySip.textContent = '₹' + Math.round(monthlySIP).toLocaleString('en-IN');
+            goalTotalInvestment.textContent = '₹' + Math.round(totalInvestment).toLocaleString('en-IN');
+            goalWealthGain.textContent = '₹' + Math.round(wealthGain).toLocaleString('en-IN');
+            
+            // Update target amount and years display
+            if (targetAmount >= 10000000) {
+                goalTargetDisplay.textContent = '₹' + (targetAmount / 10000000).toFixed(2) + ' Crore';
+            } else {
+                goalTargetDisplay.textContent = '₹' + (targetAmount / 100000).toFixed(1) + ' Lakhs';
+            }
+            goalYearsDisplay.textContent = years + ' years';
+            
+            // Set asset allocation based on goal duration
+            if (years <= 3) {
+                document.getElementById('goal-equity-percent').textContent = '30%';
+                document.querySelector('#goal-equity-percent').nextElementSibling.style.width = '30%';
+                document.getElementById('goal-debt-percent').textContent = '60%';
+                document.querySelector('#goal-debt-percent').nextElementSibling.style.width = '60%';
+                document.getElementById('goal-other-percent').textContent = '10%';
+                document.querySelector('#goal-other-percent').nextElementSibling.style.width = '10%';
+            } else if (years <= 7) {
+                document.getElementById('goal-equity-percent').textContent = '50%';
+                document.querySelector('#goal-equity-percent').nextElementSibling.style.width = '50%';
+                document.getElementById('goal-debt-percent').textContent = '40%';
+                document.querySelector('#goal-debt-percent').nextElementSibling.style.width = '40%';
+                document.getElementById('goal-other-percent').textContent = '10%';
+                document.querySelector('#goal-other-percent').nextElementSibling.style.width = '10%';
+            } else {
+                document.getElementById('goal-equity-percent').textContent = '70%';
+                document.querySelector('#goal-equity-percent').nextElementSibling.style.width = '70%';
+                document.getElementById('goal-debt-percent').textContent = '20%';
+                document.querySelector('#goal-debt-percent').nextElementSibling.style.width = '20%';
+                document.getElementById('goal-other-percent').textContent = '10%';
+                document.querySelector('#goal-other-percent').nextElementSibling.style.width = '10%';
+            }
+        });
+        
+        // Risk Profile Quiz Logic
+        document.getElementById('calculate-risk').addEventListener('click', function() {
+            // Get all selected radio buttons
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            const q4 = document.querySelector('input[name="q4"]:checked');
+            const q5 = document.querySelector('input[name="q5"]:checked');
+            
+            // Check if all questions are answered
+            if (!q1 || !q2 || !q3 || !q4 || !q5) {
+                alert('Please answer all questions to calculate your risk profile.');
+                return;
+            }
+            
+            // Calculate total score
+            const score = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value) + parseInt(q4.value) + parseInt(q5.value);
+            
+            // Determine risk profile based on score
+            let profileName, profileDescription, equityPercent, debtPercent, otherPercent;
+            
+            if (score <= 8) {
+                profileName = 'Conservative Investor';
+                profileDescription = 'You prefer stability and capital preservation over high returns. You are uncomfortable with significant market fluctuations and prioritize protecting your investment over growth.';
+                equityPercent = '20%';
+                debtPercent = '70%';
+                otherPercent = '10%';
+            } else if (score <= 12) {
+                profileName = 'Moderately Conservative';
+                profileDescription = 'You seek a balance but lean toward safety. You can accept minor market fluctuations for somewhat better returns, but still prioritize stability over significant growth.';
+                equityPercent = '40%';
+                debtPercent = '50%';
+                otherPercent = '10%';
+            } else if (score <= 16) {
+                profileName = 'Balanced Investor';
+                profileDescription = 'You have a moderate approach to risk, seeking a balance between growth and stability. You understand market fluctuations are normal and are prepared to weather some volatility for potentially better long-term returns.';
+                equityPercent = '60%';
+                debtPercent = '30%';
+                otherPercent = '10%';
+            } else {
+                profileName = 'Growth-Oriented Investor';
+                profileDescription = 'You are comfortable with substantial market volatility for the opportunity of achieving higher returns. You take a long-term view of your investments and can withstand significant market downturns without panicking.';
+                equityPercent = '80%';
+                debtPercent = '15%';
+                otherPercent = '5%';
+            }
+            
+            // Update the result display
+            document.getElementById('risk-profile-name').textContent = profileName;
+            document.getElementById('risk-profile-score').textContent = 'Score: ' + score + '/20';
+            document.getElementById('risk-profile-description').textContent = profileDescription;
+            
+            document.getElementById('risk-equity-percent').textContent = equityPercent;
+            document.getElementById('risk-debt-percent').textContent = debtPercent;
+            document.getElementById('
